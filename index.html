@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,7 +55,7 @@
   .screen{position:absolute;inset:clamp(8px,1.6vh,18px) clamp(24px,3.4vw,50px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(12px,2.2vh,26px);opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .32s ease,transform .32s ease,visibility .32s;}
   .screen.is-active{opacity:1;visibility:visible;transform:none;}
   .screen.fill{justify-content:flex-start;align-items:stretch;gap:8px;}
-  .screen[data-screen="stations"]{gap:clamp(8px,1.4vh,16px);}
+  .screen[data-screen="lesson"]{gap:clamp(12px,2vh,24px);}
   .tool-open{align-self:center;font-weight:700;color:var(--green-dark);font-size:clamp(13px,1.4vw,17px);text-decoration:none;padding:4px 10px;}
   .tool-open:hover{text-decoration:underline;}
 
@@ -124,18 +125,18 @@
   .qa-del{position:absolute;top:-10px;right:-10px;width:28px;height:28px;border-radius:50%;border:none;background:var(--check);color:#fff;font-weight:900;font-size:16px;cursor:pointer;box-shadow:var(--shadow);line-height:1;}
   .q-controls{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
 
-  /* Stations / FA assignment board */
-  .roster{display:flex;flex-direction:column;gap:clamp(6px,1vh,11px);width:min(940px,98%);max-height:100%;overflow-y:auto;}
-  .stu{position:relative;display:flex;align-items:center;gap:clamp(10px,1.4vw,20px);background:var(--card);border:3px solid var(--line);border-radius:16px;padding:clamp(6px,1vh,11px) clamp(12px,1.6vw,20px);box-shadow:var(--shadow);}
-  .stu-photo{width:clamp(44px,4.6vw,62px);height:clamp(44px,4.6vw,62px);border-radius:50%;flex-shrink:0;background:var(--panel) center/cover no-repeat;display:flex;align-items:center;justify-content:center;cursor:pointer;border:2px dashed var(--green-mid);color:var(--green-dark);font-weight:800;font-size:clamp(18px,2vw,26px);overflow:hidden;}
-  .stu-photo.has-img{border-style:solid;border-color:var(--line);}
-  .stu-name{width:clamp(84px,10vw,140px);flex-shrink:0;font-weight:900;font-size:clamp(15px,1.7vw,23px);color:var(--ink);background:transparent;border:none;border-bottom:2px solid transparent;padding:4px;}
-  .stu-name:focus{outline:none;border-bottom-color:var(--green-mid);}
-  .stu-fields{display:flex;gap:clamp(8px,1.2vw,16px);flex:1;flex-wrap:wrap;}
-  .stu-fields label{display:flex;flex-direction:column;font-weight:800;font-size:clamp(9px,.95vw,12px);color:var(--green-dark);letter-spacing:.05em;text-transform:uppercase;gap:3px;flex:1;min-width:78px;}
-  .stu-fields input{font-weight:800;font-size:clamp(14px,1.6vw,21px);color:var(--ink);background:var(--panel);border:2px solid var(--line);border-radius:10px;padding:6px 8px;width:100%;font-family:"Nunito",sans-serif;}
-  .stu-fields input:focus{border-color:var(--green-mid);outline:none;}
-  .stu-del{position:absolute;top:-10px;right:-10px;width:28px;height:28px;border-radius:50%;border:none;background:var(--check);color:#fff;font-weight:900;font-size:16px;cursor:pointer;box-shadow:var(--shadow);line-height:1;}
+  /* Today's Lesson */
+  .lesson-hero{background:var(--card);border:3px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,3vh,34px) clamp(24px,4vw,54px);text-align:center;width:min(760px,96%);}
+  .lh-day{font-family:"Baloo 2",cursive;font-weight:800;color:var(--green-dark);font-size:clamp(24px,3.4vw,40px);line-height:1;}
+  .lh-label{color:var(--ink-soft);font-weight:700;font-size:clamp(14px,1.6vw,20px);margin:6px 0 8px;}
+  .lh-lesson{font-family:"Baloo 2",cursive;font-weight:800;color:var(--pink-dark);font-size:clamp(40px,7vw,84px);line-height:1.04;}
+  .week{display:flex;gap:clamp(8px,1.2vw,16px);flex-wrap:wrap;justify-content:center;width:min(960px,98%);}
+  .wk{flex:1;min-width:150px;background:var(--card);border:3px solid var(--line);border-radius:16px;padding:clamp(8px,1.3vh,14px) clamp(8px,1vw,14px);box-shadow:var(--shadow);display:flex;flex-direction:column;gap:7px;}
+  .wk.today{border-color:var(--today);box-shadow:0 0 0 3px rgba(255,93,162,.28),var(--shadow);}
+  .wk-name{font-weight:900;font-size:clamp(13px,1.4vw,18px);color:var(--green-dark);text-align:center;text-transform:uppercase;letter-spacing:.04em;}
+  .wk.today .wk-name{color:var(--pink-dark);}
+  .wk-input{font-family:"Nunito",sans-serif;font-weight:800;font-size:clamp(14px,1.5vw,20px);color:var(--ink);background:var(--panel);border:2px solid var(--line);border-radius:10px;padding:8px;width:100%;text-align:center;}
+  .wk-input:focus{border-color:var(--green-mid);outline:none;}
 
   .btn{font-family:"Nunito",sans-serif;font-weight:800;font-size:clamp(14px,1.5vw,19px);padding:12px 26px;border-radius:14px;border:3px solid var(--green);background:var(--green);color:#fff;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:transform .12s;}
   .btn:active{transform:scale(.97);}
@@ -158,7 +159,7 @@
       <button class="navbtn" data-screen="cal"><span>Calendar</span><span class="dot"></span></button>
       <button class="navbtn" data-screen="weather"><span>Weather</span><span class="dot"></span></button>
       <button class="navbtn" data-screen="question"><span>Question of the Day</span><span class="dot"></span></button>
-      <button class="navbtn" data-screen="stations"><span>Stations</span><span class="dot"></span></button>
+      <button class="navbtn" data-screen="lesson"><span>Today&rsquo;s Lesson</span><span class="dot"></span></button>
     </nav>
     <div class="mascot"></div>
   </aside>
@@ -224,14 +225,14 @@
         </div>
       </section>
 
-      <!-- Stations: FA block assignment board -->
-      <section class="screen" data-screen="stations">
-        <div class="subprompt">Where do we start today?</div>
-        <div class="roster" id="roster"></div>
-        <div class="q-controls">
-          <button class="btn ghost" id="stnAdd">＋ Add student</button>
-          <button class="btn ghost" id="stnClear">Clear assignments</button>
+      <!-- Today's Lesson: day-of-week lesson content, editable -->
+      <section class="screen" data-screen="lesson">
+        <div class="lesson-hero">
+          <div class="lh-day" id="lhDay"></div>
+          <div class="lh-label" id="lhLabel">Today we are learning</div>
+          <div class="lh-lesson" id="lhLesson"></div>
         </div>
+        <div class="week" id="weekList"></div>
       </section>
     </div>
   </main>
@@ -249,8 +250,8 @@ const SEED_EVENTS = {};
   SEED_EVENTS[m+"-21"]={cat:"dayoff",label:"Example Day Off"};
 })();
 
-/* Stations / FA assignments are edited on the board itself and saved locally
-   \u2014 no config needed here. See the Stations screen. */
+/* Today's Lesson is prefilled by day of week and edited on the board itself,
+   saved locally \u2014 no config needed here. See the Today's Lesson screen. */
 
 const DAYS=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 const DOW=["S","M","T","W","T","F","S"];
@@ -415,49 +416,43 @@ document.getElementById("qAdd").addEventListener("click",()=>{if(qState.answers.
 document.getElementById("qClear").addEventListener("click",()=>{qState={question:"",answers:[{text:"",img:""},{text:"",img:""}]};qSave();qRender();});
 qLoad();qRender();
 
-/* -------- Stations: FA assignment board (editable, saves locally) -------- */
-const STN_KEY="morningboard_stations_v1";
-const roster=document.getElementById("roster");
-let stnState=[
-  {name:"Sihan",photo:"",station:"",para:"",task:""},
-  {name:"Rowan",photo:"",station:"",para:"",task:""},
-  {name:"Shane",photo:"",station:"",para:"",task:""},
-  {name:"Lionel",photo:"",station:"",para:"",task:""},
-  {name:"Drew",photo:"",station:"",para:"",task:""},
-];
-function stnLoad(){try{const s=localStorage.getItem(STN_KEY);if(s)stnState=JSON.parse(s);}catch(e){}}
-function stnSave(){try{localStorage.setItem(STN_KEY,JSON.stringify(stnState));}catch(e){}}
-function stnRender(){
-  roster.innerHTML="";
-  stnState.forEach((st,i)=>{
-    const row=document.createElement("div");row.className="stu";
-    const ph=document.createElement("div");ph.className="stu-photo"+(st.photo?" has-img":"");
-    if(st.photo){ph.style.backgroundImage="url("+st.photo+")";}else{ph.textContent="+";}
-    ph.addEventListener("click",()=>{const inp=document.createElement("input");inp.type="file";inp.accept="image/*";inp.onchange=e=>{const f=e.target.files[0];if(f)downscale(f,url=>{stnState[i].photo=url;stnSave();stnRender();});};inp.click();});
-    const nm=document.createElement("input");nm.className="stu-name";nm.value=st.name||"";nm.placeholder="Name";
-    nm.addEventListener("input",()=>{stnState[i].name=nm.value;stnSave();});
-    const fields=document.createElement("div");fields.className="stu-fields";
-    [["Station","station"],["Staff","para"],["Task","task"]].forEach(([lab,key])=>{
-      const l=document.createElement("label");l.textContent=lab;
-      const inp=document.createElement("input");inp.value=st[key]||"";
-      inp.addEventListener("input",()=>{stnState[i][key]=inp.value;stnSave();});
-      l.appendChild(inp);fields.appendChild(l);
-    });
-    const del=document.createElement("button");del.className="stu-del";del.textContent="\u00D7";del.title="Remove";
-    del.addEventListener("click",()=>{stnState.splice(i,1);stnSave();stnRender();});
-    row.appendChild(ph);row.appendChild(nm);row.appendChild(fields);row.appendChild(del);
-    roster.appendChild(row);
-  });
+/* -------- Today's Lesson: day-of-week content, editable, saves locally -------- */
+const LES_KEY="morningboard_lessons_v1";
+const LES_DAYS=["Monday","Tuesday","Wednesday","Thursday","Friday"];
+let lesState={Monday:"Time",Tuesday:"News2You",Wednesday:"Money",Thursday:"Scholastic News",Friday:"Personal Information"};
+function lesLoad(){try{const s=localStorage.getItem(LES_KEY);if(s)lesState=Object.assign({},lesState,JSON.parse(s));}catch(e){}}
+function lesSave(){try{localStorage.setItem(LES_KEY,JSON.stringify(lesState));}catch(e){}}
+const weekList=document.getElementById("weekList");
+const lhDay=document.getElementById("lhDay"),lhLesson=document.getElementById("lhLesson"),lhLabel=document.getElementById("lhLabel");
+const todayName=DAYS[now.getDay()];
+function lesRenderHero(){
+  lhDay.textContent="Today is "+todayName;
+  if(LES_DAYS.indexOf(todayName)>-1){
+    lhLabel.textContent="Today we are learning";
+    lhLesson.textContent=lesState[todayName]||"\u2014";
+  }else{
+    lhLabel.textContent="";
+    lhLesson.textContent="Enjoy the weekend!";
+  }
 }
-document.getElementById("stnAdd").addEventListener("click",()=>{stnState.push({name:"",photo:"",station:"",para:"",task:""});stnSave();stnRender();});
-document.getElementById("stnClear").addEventListener("click",()=>{stnState=stnState.map(s=>({name:s.name,photo:s.photo,station:"",para:"",task:""}));stnSave();stnRender();});
-stnLoad();stnRender();
+function lesRender(){
+  weekList.innerHTML="";
+  LES_DAYS.forEach(d=>{
+    const wk=document.createElement("div");wk.className="wk"+(d===todayName?" today":"");
+    const nm=document.createElement("div");nm.className="wk-name";nm.textContent=d;
+    const inp=document.createElement("input");inp.className="wk-input";inp.value=lesState[d]||"";inp.placeholder="Lesson";
+    inp.addEventListener("input",()=>{lesState[d]=inp.value;lesSave();if(d===todayName)lesRenderHero();});
+    wk.appendChild(nm);wk.appendChild(inp);weekList.appendChild(wk);
+  });
+  lesRenderHero();
+}
+lesLoad();lesRender();
 
 /* -------- Navigation + in-order progress -------- */
 const navbtns=[...document.querySelectorAll(".navbtn")];
 const screens=document.querySelectorAll(".screen");
 const order=navbtns.map(b=>b.dataset.screen);
-const titles={checkin:"Check In",day:"Days of the Week",cal:"Calendar",weather:"Weather",question:"Question of the Day",stations:"Stations"};
+const titles={checkin:"Check In",day:"Days of the Week",cal:"Calendar",weather:"Weather",question:"Question of the Day",lesson:"Today\u2019s Lesson"};
 function show(id){
   const idx=order.indexOf(id);
   screens.forEach(s=>s.classList.toggle("is-active",s.dataset.screen===id));
